@@ -25,10 +25,5 @@
   },
   "jest": {
     "preset": "react-native"
-  },
-  "engines": {
-    "node": "8.16.0",
-    "npm": "6.0.1",
-    "yarn": "1.12.1"
   }
 }
