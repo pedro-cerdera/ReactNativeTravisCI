@@ -19,6 +19,6 @@ before_install:
 cache:
   yarn: true
 install:
-  - yarn ci
+  - yarn install
 script:
   - "./android/gradlew assembleRelease -p android/"
