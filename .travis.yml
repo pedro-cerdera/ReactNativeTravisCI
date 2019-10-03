@@ -23,7 +23,8 @@ matrix:
       osx_image: xcode10.3
       before_install:
         - brew install jq
-        - fastale init
-        - bundle install
+        - sudo gem install fastlane -NV
+        - cd ios && fastale init && cd ..
+        - cd ios && bundle install && cd ..
       script:
         - cd ios && bundle exec fastlane ios test && cd ..
