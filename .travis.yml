@@ -1,4 +1,17 @@
+os: linux
+language: android
+jdk: oraclejdk8
+
+env:
+  - TRAVIS_NODE_VERSION="10.16.3"
+  - TRAVIS_NODE_VERSION="10"
+android:
+  components:
+    - build-tools-28.0.3
+    - android-28
 before_install:
+  - yes | sdkmanager "platforms;android-28"
+  - yes | sdkmanager "build-tools;28.0.3"
   - curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
   - sudo apt-key adv --fetch-keys http://dl.yarnpkg.com/debian/pubkey.gpg
   - echo "deb http://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
@@ -8,24 +21,5 @@ cache:
   yarn: true
 install:
   - yarn install
-matrix:
-   include:
-  - os: linux
-    language: android
-    jdk: oraclejdk8
-    android:
-      components:
-        - build-tools-28.0.3
-        - android-28
-    before_install:
-      - yes | sdkmanager "platforms;android-28"
-      - yes | sdkmanager "build-tools;28.0.3"
-    script:
-      - "./android/gradlew assembleRelease -p android/"
-  - os: osx
-    osx_image: xcode10.3
-    before_install:
-      - brew install jq
-      - bundle install
-    script:
-      - cd ios && bundle exec fastlane ios test && cd ..
+script:
+  - "./android/gradlew assembleRelease -p android/"
