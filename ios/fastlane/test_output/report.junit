@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<testsuites name='ReactNativeTravisCITests.xctest' tests='1' failures='0'>
+  <testsuite name='ReactNativeTravisCITests' tests='1' failures='0'>
+    <testcase classname='ReactNativeTravisCITests' name='testRendersWelcomeScreen' time='0.345'/>
+  </testsuite>
+</testsuites>
