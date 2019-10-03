@@ -27,5 +27,6 @@ matrix:
         - sudo gem install fastlane -NV
         - cd ios && fastlane init && cd ..
         - cd ios && bundle install && cd ..
+        - cd ios && pod install && cd ..
       script:
         - cd ios && bundle exec fastlane ios test && cd ..
