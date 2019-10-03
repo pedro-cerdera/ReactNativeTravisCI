@@ -24,6 +24,7 @@ matrix:
       osx_image: xcode10.3
       before_script:
         - brew install jq
+        - brew install curl
         - sudo gem install fastlane -NV
         - cd ios && fastlane init && cd ..
         - cd ios && bundle install && cd ..
