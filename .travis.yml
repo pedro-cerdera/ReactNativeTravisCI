@@ -22,7 +22,7 @@ matrix:
         - "./android/gradlew assembleRelease -p android/"
     - os: osx
       osx_image: xcode10.3
-      before_install:
+      before_script:
         - brew install jq
         - sudo gem install fastlane -NV
         - cd ios && fastlane init && cd ..
