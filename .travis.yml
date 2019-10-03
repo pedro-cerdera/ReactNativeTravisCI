@@ -28,4 +28,4 @@ matrix:
       - brew install jq
       - bundle install
     script:
-      - bundle exec fastlane ios test
+      - cd ios && bundle exec fastlane ios test && cd ..
