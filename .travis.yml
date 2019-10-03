@@ -7,22 +7,22 @@ install:
   - yarn install
 matrix:
    include:
-  - os: linux
-    language: android
-    jdk: oraclejdk8
-    android:
-      components:
-        - build-tools-28.0.3
-        - android-28
-    before_install:
-      - yes | sdkmanager "platforms;android-28"
-      - yes | sdkmanager "build-tools;28.0.3"
-    script:
-      - "./android/gradlew assembleRelease -p android/"
-  - os: osx
-    osx_image: xcode10.3
-    before_install:
-      - brew install jq
-      - bundle install
-    script:
-      - cd ios && bundle exec fastlane ios test && cd ..
+    - os: linux
+      language: android
+      jdk: oraclejdk8
+      android:
+        components:
+          - build-tools-28.0.3
+          - android-28
+      before_install:
+        - yes | sdkmanager "platforms;android-28"
+        - yes | sdkmanager "build-tools;28.0.3"
+      script:
+        - "./android/gradlew assembleRelease -p android/"
+    - os: osx
+      osx_image: xcode10.3
+      before_install:
+        - brew install jq
+        - bundle install
+      script:
+        - cd ios && bundle exec fastlane ios test && cd ..
