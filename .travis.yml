@@ -24,7 +24,7 @@ matrix:
       before_install:
         - brew install jq
         - sudo gem install fastlane -NV
-        - cd ios && fastale init && cd ..
+        - cd ios && fastlane init && cd ..
         - cd ios && bundle install && cd ..
       script:
         - cd ios && bundle exec fastlane ios test && cd ..
