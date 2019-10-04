@@ -23,7 +23,7 @@ matrix:
     - os: osx
       osx_image: xcode10.3
       before_install:
-        - npm install yarn -g
+        - npm install -g yarn
         - nvm install v10.16.0 && nvm use v10.16.0
       before_script:
         - brew install jq
