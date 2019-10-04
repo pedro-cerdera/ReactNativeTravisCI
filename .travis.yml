@@ -23,7 +23,8 @@ matrix:
     - os: osx
       osx_image: xcode10.3
       before_install:
-        - nvm use v10.16.0
+        - npm install yarn -g
+        - nvm install v10.16.0 nvm use v10.16.0
       before_script:
         - brew install jq
         - sudo gem install fastlane -NV
