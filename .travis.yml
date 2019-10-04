@@ -1,5 +1,6 @@
 install:
   - yarn install
+cache: yarn
 
 matrix:
    include:
@@ -31,4 +32,4 @@ matrix:
         - cd ios && fastlane init && cd ..
         - cd ios && bundle install && cd ..
       script:
-        - cd ios && pod install && bundle exec fastlane ios test && cd ..
+        - cd ios && pod install && bundle exec fastlane ios screenshots && cd ..
