@@ -31,8 +31,8 @@
   "detox": {
     "configurations": {
       "ios.sim.debug": {
-        "binaryPath": "ios/build/ReactNativeTravisCI/Build/Products/Debug-iphonesimulator/ReactNativeTravisCI.app",
-        "build": "export RCT_NO_LAUNCH_PACKAGER=true && xcodebuild -workspace ios/ReactNativeTravisCI.xcworkspace -scheme ReactNativeTravisCI -configuration Debug -sdk iphonesimulator -derivedDataPath ios/build",
+        "binaryPath": "ios/build/ReactNativeTravisCITest/Build/Products/Debug-iphonesimulator/ReactNativeTravisCI.app",
+        "build": "export RCT_NO_LAUNCH_PACKAGER=true && xcodebuild -workspace ios/ReactNativeTravisCI.xcworkspace -scheme ReactNativeTravisCI -configuration Debug -sdk iphonesimulator -derivedDataPath ios/build/ReactNativeTravisCITest",
         "type": "ios.simulator",
         "name": "iPhone 8"
       },
