@@ -30,14 +30,8 @@ matrix:
     - sudo gem install fastlane -NV
     - cd ios && fastlane init && cd ..
     - cd ios && bundle install && cd ..
-    jobs:
-      include:
-        - stage: build
-          script:
-          - cd ios && pod install && bundle exec fastlane ios screenshots && cd ..
-        - stage: test
-          script:
-          - yarn detox:ios
-
+    script:
+    - cd ios && pod install && bundle exec fastlane ios screenshots && cd ..
+    - yarn detox:ios
 dd:
   secure: kqTC/zNHoiq1UbYnwWXZPbEW2X/RniU3x/2Mwo4LOkhX1mxK3xdOiOfaq6HEO+Uo8JZbcMLzqsetTz4aL30z53RZk4zxHJP+jonUgADXPQ98yfWRZSSdY2sfPuWjrBv6MHZPOU+iWSKcA64uc9otGDdM+hjCkXFZZUC+Ibj5D9HY7QweESFUjbc+gglGX1zQSSTNKjP3IntKMeQWuvinGIzz4TyRGhMLfiCFAwuKeGdxMZdz/lwpD3QtpfnguEjQJh+7n9//pGCIGVBpqMgad1QLqD2iz4Gcf+xoSMEcTlnHmfVQvZVTYyiq2jzIF5EQrGjPn64otNbOj0tqiB1fAhdQ/PewEkSd/xLqkKoWQELF9McET4MkgYcwvYa93cRC2YT26FCjdTJgyjdjrkp/m7xuYTkEiVQ60rk8TISG9Wn95U+fTKYL7HtBj5XcunH1Oe8MJd+DXl1wOKVNnkzFqKAa1Nk0Y0pWcRnmFALQ2DvaHgOSwN6l/nsv0gitRPqiUReLqtBcxiBtnoXg6P2cQiicDZp9CAYlhHh/iAiN4hO7hyU7l5qq/1znbUhMdaI1zxcO6CqOVFZYYY0VgokIPlIS8nfz9Kh2rrNXql6SZ3dWBBupqMM9oEszK8T3MkKjYiLYHXCCzu8DUDB5GV9GQNHLUBH61VA1O4Uugbki4Jk=
