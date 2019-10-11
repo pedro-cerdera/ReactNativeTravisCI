@@ -5,6 +5,7 @@ matrix:
   include:
   - os: linux
     env: BUILD=android
+    if: type = push
     language: android
     jdk: oraclejdk8
     android:
@@ -23,6 +24,7 @@ matrix:
     - "./android/gradlew assembleRelease -p android/"
   - os: osx
     env: BUILD=ios
+    if: type = push
     osx_image: xcode10.3
     before_install:
     - nvm install v10.16.0 && nvm use v10.16.0
