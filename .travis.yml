@@ -4,6 +4,7 @@ cache: yarn
 matrix:
   include:
   - os: linux
+    env: BUILD=android
     language: android
     jdk: oraclejdk8
     android:
@@ -21,6 +22,7 @@ matrix:
     script:
     - "./android/gradlew assembleRelease -p android/"
   - os: osx
+    env: BUILD=ios
     osx_image: xcode10.3
     before_install:
     - nvm install v10.16.0 && nvm use v10.16.0
@@ -33,13 +35,16 @@ matrix:
     script:
     - cd ios && pod install && bundle exec fastlane ios screenshots && cd ..
   - os: osx
+    env: TEST=ios
     osx_image: xcode10.3
     before_install:
     - nvm install v10.16.0 && nvm use v10.16.0
     - npm install -g yarn
+    - sudo gem install cocoapods
     before_script:
     - brew install jq
     - brew install wix/brew/applesimutils
+    - cd ios && pod install && cd ..
     script:
     - yarn detox:ios
 dd:
