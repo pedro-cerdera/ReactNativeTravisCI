@@ -45,7 +45,7 @@ matrix:
     - brew install jq
     - brew install wix/brew/applesimutils
     - cd ios && pod install && cd ..
-    - ./node_modules/.bin/react-native run-ios --simulator "iPhone 8"
+    - ./node_modules/.bin/react-native start --reset-cache > /dev/null 2>&1 &
     script:
     - yarn detox:ios
 dd:
