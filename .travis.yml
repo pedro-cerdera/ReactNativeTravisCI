@@ -40,12 +40,13 @@ matrix:
     before_install:
     - nvm install v10.16.0 && nvm use v10.16.0
     - npm install -g yarn
-    - sudo gem install cocoapods
     before_script:
     - brew install jq
+    - sudo gem install fastlane -NV
+    - cd ios && fastlane init && cd ..
+    - cd ios && bundle install && cd ..
     - brew install wix/brew/applesimutils
-    - cd ios && pod install && cd ..
-    - ./node_modules/.bin/react-native start --reset-cache > /dev/null 2>&1 &
+    - cd ios && pod install && bundle exec fastlane ios screenshots && cd ..
     script:
     - yarn detox:ios
 dd:
