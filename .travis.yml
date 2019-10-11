@@ -27,6 +27,7 @@ matrix:
     - npm install -g yarn
     before_script:
     - brew install jq
+    - brew install wix/brew/applesimutils
     - sudo gem install fastlane -NV
     - cd ios && fastlane init && cd ..
     - cd ios && bundle install && cd ..
