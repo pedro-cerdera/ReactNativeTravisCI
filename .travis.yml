@@ -45,6 +45,7 @@ matrix:
     - brew install jq
     - brew install wix/brew/applesimutils
     - cd ios && pod install && cd ..
+    - react-native start --reset-caches
     script:
     - yarn detox:ios
 dd:
